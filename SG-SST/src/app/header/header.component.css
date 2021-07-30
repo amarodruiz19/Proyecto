@@ -1,0 +1,35 @@
+mat-toolbar{
+  background-color: rgb(9, 214, 9);
+
+}
+
+.titulo{
+  color: aliceblue;
+  padding: 0;
+  margin: 0;
+  display:block;
+  text-align: center;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.button{
+  color: white;
+
+}
+
