@@ -21,13 +21,13 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-mongoose.connect(dataBaseConfig.db, { useUnifiedTopology: true, useNewUrlParser: true});
+/*mongoose.connect(dataBaseConfig.db, { useUnifiedTopology: true, useNewUrlParser: true});
 var db = mongoose.connection;
 
 if(!db)
     console.log("Error conectando db")
 else
-    console.log("Db conectada con exito")
+    console.log("Db conectada con exito")*/
 
 // Setup server port
 var port = process.env.PORT || 8080;
