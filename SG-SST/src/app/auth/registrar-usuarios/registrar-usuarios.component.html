@@ -15,16 +15,19 @@
 </mat-toolbar>
 
 <mat-card>
-<form>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input
         matInput
         type="text"
-        name="tipoIdentificacion"
+        id= "codEmp"
+        formControlName= "codEmp" 
+
+        
 
         required
 
-        placeholder="Tipo Identificación"
+        placeholder="Código Empleado"
       />
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
@@ -33,25 +36,12 @@
       <input
         matInput
         type="text"
-        name="numeroIdentificacion"
+        id="nombre"
+        formControlName= "nombre"
 
         required
 
-        placeholder="Número Identificación"
-      />
-      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
-    </mat-form-field>
-
-
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="nombreEmpleado"
-
-        required
-
-        placeholder="Nombre Empleado"
+        placeholder="Nombres"
       />
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
@@ -61,11 +51,41 @@
       <input
         matInput
         type="text"
-        name="apellidosEmpleado"
+        id="apellido"
+        formControlName= "apellido"
 
         required
 
-        placeholder="Apellidos Empleado"
+        placeholder="Apellidos"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input
+        matInput
+        type="email"
+        id="email"
+        formControlName= "email"
+
+        required
+
+        placeholder="Correo Electrónico"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        id="contrasena"
+        formControlName= "contrasena"
+
+        required
+
+        placeholder="Contraseña"
       />
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
@@ -74,46 +94,8 @@
       <input
         matInput
         type="text"
-        name="genero"
-
-        required
-
-        placeholder="Género"
-      />
-      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
-    </mat-form-field>
-
-    <mat-form-field>
-      <input
-        matInput
-        type="date"
-        name="fechaNacimiento"
-
-        required
-
-        placeholder="Fecha Nacimiento"
-      />
-      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
-    </mat-form-field>
-
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="departamento"
-
-        required
-
-        placeholder="Departamento"
-      />
-      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
-    </mat-form-field>
-
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="estado"
+        id="estado"
+        formControlName= "estado"
 
         required
 
@@ -126,11 +108,12 @@
       <input
         matInput
         type="text"
-        name="direccionResidencia"
+        id="idDepto"
+        formControlName= "idDepto"
 
         required
 
-        placeholder="Direccion Residencia"
+        placeholder="Departamento"
       />
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
@@ -138,10 +121,39 @@
     <mat-form-field>
       <input
         matInput
-        type="email"
-        name="email"
+        type="text"
+        id="genero"
+        formControlName= "genero"
 
-        placeholder="Email"
+        required
+
+        placeholder="Genero"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="perfil"
+        formControlName= "perfil"
+
+        required
+
+        placeholder="Perfil"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="direccion"
+        formControlName= "direccion"
+
+        placeholder="Dirección Residencia"
         required
         email
       />
@@ -150,10 +162,11 @@
     <mat-form-field>
       <input
         matInput
-        type="password"
-        name="password"
+        type="date"
+        name="fechaCumple"
+        formControlName= "fechaCumple"
 
-        placeholder="Password"
+        placeholder="Fecha de Nacimiento"
         required
       />
       <!-- <mat-error *ngIf="password.invalid">Campo invalido</mat-error> -->
