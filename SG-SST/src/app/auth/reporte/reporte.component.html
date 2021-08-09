@@ -1,0 +1,180 @@
+<mat-toolbar>
+  <span>
+    <a routerLink="/"> <img src ="./assets/Logo6.png"  width="300"></a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-button routerLink="/reportes" routerLinkActive="mat-accent">Reportes</a>
+    </li>
+  </ul>
+
+</mat-toolbar>
+
+<mat-card>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id= "codRep"
+        formControlName= "codRep" 
+
+        
+
+        required
+
+        placeholder="Código Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id= "codEmp"
+        formControlName= "codEmp" 
+
+        
+
+        required
+
+        placeholder="Código Empleado"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="date"
+        id="fechaRep"
+        formControlName= "fechaRep"
+
+        required
+
+        placeholder="Fecha Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input
+        matInput
+        type="time"
+        id="horaRep"
+        formControlName= "horaRep"
+
+        required
+
+        placeholder="Hora Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="asuntoRep"
+        formControlName= "asuntoRep"
+
+        required
+
+        placeholder="Asunto Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="descripcionRep"
+        formControlName= "descripcionRep"
+
+        required
+
+        placeholder="Descripcion Reporte"
+      />
+              
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+    <input
+        matInput
+        type="text"
+        id="idDepto"
+        formControlName= "idDepto"
+
+        required
+
+        placeholder="ID Departamento"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+      </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="ubicacionRep"
+        formControlName= "ubicacionRep"
+
+        required
+
+        placeholder="Ubicación Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="idFoto"
+        formControlName= "idFoto"
+
+        required
+
+        placeholder="ID Foto"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="idTipoRep"
+        formControlName= "idTipoRep"
+
+        required
+
+        placeholder="ID Tipo Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="idMatrizRep"
+        formControlName= "idMatrizRep"
+
+        required
+
+        placeholder="ID Matriz Reporte"
+      />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    </mat-form-field>
+
+    
+    <button mat-raised-button color="primary" type="submit" >Enviar</button>
+  </form>
+</mat-card>

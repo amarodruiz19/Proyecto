@@ -24,7 +24,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 
 import { RegistrarUsuariosComponent } from './auth/registrar-usuarios/registrar-usuarios.component';
-
+import { ReporteComponent } from './auth/reporte/reporte.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { RegistrarUsuariosComponent } from './auth/registrar-usuarios/registrar-
     SstComponent,
     LoginComponent,
     RegistrarUsuariosComponent,
+    ReporteComponent,
 
 
   ],

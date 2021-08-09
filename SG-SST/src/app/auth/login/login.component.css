@@ -7,7 +7,7 @@ input
 mat-card {
   margin: 5rem 5rem;
 
-  background: -webkit-radial-gradient(center, ellipse, rgb(167, 243, 148), rgb(6, 243, 77));
+  background: -webkit-radial-gradient(center, ellipse, rgb(121, 177, 250), rgb(65, 146, 238));
   width: 50%;
    border-radius: 8px;
 
@@ -26,9 +26,9 @@ mat-card {
   border: 5px ;
   width: 400px;
   margin: 5px;
-  background: -webkit-radial-gradient(center, ellipse, rgb(167, 243, 148), rgb(6, 243, 77));
+  background: -webkit-radial-gradient(center, ellipse, rgb(28, 119, 240), rgb(24, 157, 246));
 
- box-shadow: rgb(150,150,150)10px 10px 10px;
+ box-shadow: rgb(39, 40, 41)10px 10px 10px;
 
 }
 
