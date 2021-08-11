@@ -18,10 +18,10 @@ interface tipoRep {
 })
 export class ReporteComponent implements OnInit {
   tipoReps: tipoRep[] = [
-    {value: 'incidente-0', viewValue: ''},
-    {value: 'incidente-1', viewValue: 'Incidente'},
-    {value: 'riesgo-2', viewValue: 'Riesgo'},
-    {value: 'accidente-3', viewValue: 'Accidente'}
+    {value: 'vacio', viewValue: ''},
+    {value: 'incidente', viewValue: 'Incidente'},
+    {value: 'riesgo', viewValue: 'Riesgo'},
+    {value: 'accidente', viewValue: 'Accidente'}
   ];
 
   constructor(private fb: FormBuilder,private http: HttpClient) { }
@@ -35,7 +35,7 @@ export class ReporteComponent implements OnInit {
     idDepto: ['', Validators.required],
     ubicacionRep : ['', Validators.required],
 /*     idFoto : ['', Validators.required], */
-    // tipoRep : ['', Validators.required],
+    tipoRep : ['', Validators.required],
     idMatrizRep : ['', Validators.required]
     });
 
