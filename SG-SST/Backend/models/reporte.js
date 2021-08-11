@@ -17,7 +17,7 @@ var esquemaReporte = mongoose.Schema({
   fechaRep:{
 		type:String,
 		required: true
-		
+
 	},
 
 	horaRep: {
@@ -49,15 +49,15 @@ var esquemaReporte = mongoose.Schema({
 
 	},
 
-	idFoto: {
+/* 	idFoto: {
 		type: String,
 		required: true
 
-	},
+	}, */
 
-	idTipoRep: {
+	tipoRep: {
 		type: String,
-		required: true
+		required: false
 
 	},
 

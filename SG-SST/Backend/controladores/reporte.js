@@ -1,11 +1,11 @@
 Reporte= require('../models/reporte');
 
 exports.index = function (req,res){
-	
+
 Reporte.get(function(err,reportes){
-	
+
 	if(err){
-		
+
 		res.json({
 			status:"error",
 			message:err
@@ -14,18 +14,18 @@ Reporte.get(function(err,reportes){
 	res.json({
 		status:"success",
 		message:"reportes listados correctamente",
-		data: reportes	
-		
+		data: reportes
+
 	});
-	
-	
+
+
 });
-	
+
 };
 
 
 exports.new = function (req, res) {
-	
+
     var reporte = new Reporte();
     reporte.codRep= req.body.codRep;
     reporte.codEmp = req.body.codEmp;
@@ -35,8 +35,8 @@ exports.new = function (req, res) {
     reporte.descripcionRep= req.body.descripcionRep;
     reporte.idDepto = req.body.idDepto;
     reporte.ubicacionRep = req.body.ubicacionRep;
-    reporte.idFoto = req.body.idFoto;
-    reporte.idTipoRep = req.body.idTipoRep;
+/*     reporte.idFoto = req.body.idFoto; */
+    reporte.tipoRep = req.body.tipoRep;
     reporte.idMatrizRep = req.body.idMatrizRep;
 
    // reporte.phone = req.body.phone;
@@ -77,8 +77,8 @@ exports.update = function (req, res) {
     		reporte.descripcionRep= req.body.descripcionRep;
     		reporte.idDepto = req.body.idDepto;
     		reporte.ubicacionRep = req.body.ubicacionRep;
-    		reporte.idFoto = req.body.idFoto;
-    		reporte.idTipoRep = req.body.idTipoRep;
+/*     		reporte.idFoto = req.body.idFoto; */
+    		reporte.tipoRep = req.body.tipoRep;
     		reporte.idMatrizRep = req.body.idMatrizRep;
 // save the reporte and check for errors
         reporte.save(function (err) {

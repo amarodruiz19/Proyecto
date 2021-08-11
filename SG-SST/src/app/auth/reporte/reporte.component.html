@@ -18,9 +18,9 @@
         matInput
         type="text"
         id= "codRep"
-        formControlName= "codRep" 
+        formControlName= "codRep"
 
-        
+
 
         required
 
@@ -34,9 +34,9 @@
         matInput
         type="text"
         id= "codEmp"
-        formControlName= "codEmp" 
+        formControlName= "codEmp"
 
-        
+
 
         required
 
@@ -100,7 +100,7 @@
 
         placeholder="Descripcion Reporte"
       />
-              
+
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
@@ -132,7 +132,7 @@
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
-    <mat-form-field>
+    <!-- <mat-form-field>
       <input
         matInput
         type="text"
@@ -143,10 +143,19 @@
 
         placeholder="ID Foto"
       />
-      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
-    </mat-form-field>
+      <mat-error *ngIf="name.invalid">Campo invalido</mat-error>
+     </mat-form-field> -->
 
-    <mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Tipo de Reporte</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let tipoRep of tipoReps" [value]="tipoRep.value">
+        {{tipoRep.viewValue}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+<!--     <mat-form-field>
       <input
         matInput
         type="text"
@@ -155,10 +164,9 @@
 
         required
 
-        placeholder="ID Tipo Reporte"
-      />
+      /> -->
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
-    </mat-form-field>
+    <!-- </mat-form-field> -->
 
     <mat-form-field>
       <input
@@ -174,7 +182,7 @@
       <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
-    
+
     <button mat-raised-button color="primary" type="submit" >Enviar</button>
   </form>
 </mat-card>
