@@ -18,9 +18,10 @@ interface tipoRep {
 })
 export class ReporteComponent implements OnInit {
   tipoReps: tipoRep[] = [
-    {value: 'incidente-0', viewValue: 'Incidente'},
-    {value: 'riesgo-1', viewValue: 'Riesgo'},
-    {value: 'accidente-2', viewValue: 'Accidente'}
+    {value: 'incidente-0', viewValue: ''},
+    {value: 'incidente-1', viewValue: 'Incidente'},
+    {value: 'riesgo-2', viewValue: 'Riesgo'},
+    {value: 'accidente-3', viewValue: 'Accidente'}
   ];
 
   constructor(private fb: FormBuilder,private http: HttpClient) { }
