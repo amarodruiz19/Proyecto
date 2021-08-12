@@ -15,17 +15,12 @@ Reporte.get(function(err,reportes){
 		status:"success",
 		message:"reportes listados correctamente",
 		data: reportes
-
 	});
-
-
 });
 
 };
 
-
 exports.new = function (req, res) {
-
     var reporte = new Reporte();
     reporte.codRep= req.body.codRep;
     reporte.codEmp = req.body.codEmp;
@@ -33,7 +28,7 @@ exports.new = function (req, res) {
     reporte.horaRep = req.body.horaRep;
     reporte.asuntoRep= req.body.asuntoRep;
     reporte.descripcionRep= req.body.descripcionRep;
-    reporte.idDepto = req.body.idDepto;
+    reporte.depto = req.body.depto;
     reporte.ubicacionRep = req.body.ubicacionRep;
 /*     reporte.idFoto = req.body.idFoto; */
     reporte.tipoRep = req.body.tipoRep;
@@ -75,7 +70,7 @@ exports.update = function (req, res) {
     		reporte.horaRep = req.body.horaRep;
     		reporte.asuntoRep= req.body.asuntoRep;
     		reporte.descripcionRep= req.body.descripcionRep;
-    		reporte.idDepto = req.body.idDepto;
+    		reporte.depto = req.body.depto;
     		reporte.ubicacionRep = req.body.ubicacionRep;
 /*     		reporte.idFoto = req.body.idFoto; */
     		reporte.tipoRep = req.body.tipoRep;

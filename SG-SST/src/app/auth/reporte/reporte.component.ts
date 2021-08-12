@@ -10,18 +10,32 @@ interface tipoRep {
   viewValue: string;
 }
 
+interface depto {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-reporte',
   templateUrl: './reporte.component.html',
   styleUrls: ['./reporte.component.css']
 })
+
 export class ReporteComponent implements OnInit {
   tipoReps: tipoRep[] = [
     {value: 'vacio', viewValue: ''},
     {value: 'incidente', viewValue: 'Incidente'},
     {value: 'riesgo', viewValue: 'Riesgo'},
     {value: 'accidente', viewValue: 'Accidente'}
+  ];
+
+  deptos: depto[] = [
+    {value: 'vacio', viewValue: ''},
+    {value: 'sistemas', viewValue: 'Sistemas'},
+    {value: 'contabilidad', viewValue: 'Contabilidad'},
+    {value: 'rrhh', viewValue: 'RRHH'},
+    {value: 'logistica', viewValue: 'Logistica'},
+    {value: 'admon', viewValue: 'Admon'}
   ];
 
   constructor(private fb: FormBuilder,private http: HttpClient) { }
@@ -32,7 +46,7 @@ export class ReporteComponent implements OnInit {
     horaRep: ['', Validators.required],
     asuntoRep: ['', Validators.required],
     descripcionRep: ['', Validators.required],
-    idDepto: ['', Validators.required],
+    depto: ['', Validators.required],
     ubicacionRep : ['', Validators.required],
 /*     idFoto : ['', Validators.required], */
     tipoRep : ['', Validators.required],

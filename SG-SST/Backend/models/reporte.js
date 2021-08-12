@@ -5,19 +5,16 @@ var esquemaReporte = mongoose.Schema({
 	codRep: {
 		type: String,
 		required: true
-
 	},
 
 	codEmp: {
 		type: String,
 		required: true
-
 	},
 
   fechaRep:{
 		type:String,
 		required: true
-
 	},
 
 	horaRep: {
@@ -28,43 +25,36 @@ var esquemaReporte = mongoose.Schema({
 	asuntoRep: {
 		type: String,
 		required: true
-
 	},
 
 	descripcionRep: {
 		type: String,
 		required: true
-
 	},
 
-	idDepto: {
+	depto: {
 		type: String,
 		required: true
-
 	},
 
 	ubicacionRep: {
 		type: String,
 		required: true
-
 	},
 
 /* 	idFoto: {
 		type: String,
 		required: true
-
 	}, */
 
 	tipoRep: {
 		type: String,
 		required: false
-
 	},
 
 	idMatrizRep:{
 		type: String,
 		required: true
-
 	},
 
 });
