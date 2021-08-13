@@ -1,10 +1,35 @@
+// traido de modelos
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+const db = {};
+
+db.mongoose = mongoose;
+
+db.usuario = require("./user.model");
+db.role = require("./role.model");
+
+db.ROLES = ["empleado", "admin", "HSE"];
+// Hasta aquí
+// traido de middleeares
+const authJwt = require("./authJwt");
+const verifySignUp = require("./verifySignUp");
+
+module.exports = {
+  authJwt,
+  verifySignUp
+};
+//Hasta aquí
+
+module.exports = db;
+
 let express = require('express');
 
 let bodyParser = require('body-parser');
 
 let cors = require('cors');
 
-let mongoose = require('mongoose');
+// let mongoose = require('mongoose');
 
 let app = express();
 
@@ -33,7 +58,7 @@ else
 var port = process.env.PORT || 8080;
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('tutorial backend mision tic'));
+app.get('/', (req, res) => res.send('backend SG.SST'));
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
