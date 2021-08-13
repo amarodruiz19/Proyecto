@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -27,6 +27,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrarUsuariosComponent } from './auth/registrar-usuarios/registrar-usuarios.component';
 import { ReporteComponent } from './auth/reporte/reporte.component';
 
+import { HomeComponent } from '../app/home/home.component';
+import { ProfileComponent } from '../app/auth/profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +43,9 @@ import { ReporteComponent } from './auth/reporte/reporte.component';
     ReporteComponent,
 
 
+
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,10 +59,15 @@ import { ReporteComponent } from './auth/reporte/reporte.component';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    HomeComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
     MatSelectModule
 
   ],
-  providers: [],
+  // providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

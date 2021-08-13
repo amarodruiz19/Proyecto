@@ -66,8 +66,14 @@ var esquemaUsuario = mongoose.Schema({
 	fechaCumple:{
 		type:Date,
 		default: Date.now
-	}
+	},
 
+  roles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Role"
+    }
+  ]
 
 });
 
@@ -79,3 +85,5 @@ module.exports.get = function (callback,limit){
 	Usuario.find(callback).limit(limit);
 
 }
+
+// module.exports = User;
