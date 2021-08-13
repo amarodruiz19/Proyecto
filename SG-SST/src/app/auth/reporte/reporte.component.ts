@@ -10,17 +10,22 @@ interface tipoRep {
   viewValue: string;
 }
 
-interface depto {
+interface tipoDepto {
   value: string;
   viewValue: string;
 }
+
+interface matrizRep {
+  value: string;
+  viewValue: string;
+}
+
 
 @Component({
   selector: 'app-reporte',
   templateUrl: './reporte.component.html',
   styleUrls: ['./reporte.component.css']
 })
-
 export class ReporteComponent implements OnInit {
   tipoReps: tipoRep[] = [
     {value: 'vacio', viewValue: ''},
@@ -29,14 +34,34 @@ export class ReporteComponent implements OnInit {
     {value: 'accidente', viewValue: 'Accidente'}
   ];
 
-  deptos: depto[] = [
+  tipoDeptos: tipoDepto[] = [
     {value: 'vacio', viewValue: ''},
-    {value: 'sistemas', viewValue: 'Sistemas'},
-    {value: 'contabilidad', viewValue: 'Contabilidad'},
-    {value: 'rrhh', viewValue: 'RRHH'},
-    {value: 'logistica', viewValue: 'Logistica'},
-    {value: 'admon', viewValue: 'Admon'}
+    {value: 'deptoFinanciero', viewValue: 'Departamento Financiero'},
+    {value: 'deptoRecursosHumanos', viewValue: 'Departamento de Recursos Humanos'},
+    {value: 'deptoMarketing', viewValue: 'Departamento de Marketing'},
+    {value: 'deptoComercial', viewValue: 'Departamento Comercial'},
+    {value: 'deptoCompras', viewValue: 'Departamento de Compras'},
+    {value: 'deptoLogistica&Operaciones', viewValue: 'Departamento de Logística y Operaciones'},
+    {value: 'deptoControl', viewValue: 'Departamento de Conotrol de Gestión'},
+    {value: 'deptoDireccionG', viewValue: 'Dirección General'},
+    {value: 'deptoComite', viewValue: 'Comité de Dirección'}
+    
   ];
+
+  matrizReps: matrizRep[] = [
+    {value: 'vacio', viewValue: ''},
+    {value: 'ambiental', viewValue: 'Factor Ambiental'}, 
+    {value: 'psicosocial', viewValue: 'Factor Psicosocial'},
+    {value: 'publico', viewValue: 'Factor Público'},
+    {value: 'biologico', viewValue: 'Factor Biológico'},
+    {value: 'fisicoquimico', viewValue: 'Factor Físico-Químico'},
+    {value: 'eléctrico', viewValue: 'Factor Eléctrico'},
+    {value: 'quimico', viewValue: 'Factor Químico'},
+    {value: 'mecanico', viewValue: 'Factor Mecánico'},
+    {value: 'ergonomico', viewValue: 'Factor Ergonómico'}
+    
+  ];
+  
 
   constructor(private fb: FormBuilder,private http: HttpClient) { }
   profileForm = this.fb.group({
@@ -46,11 +71,11 @@ export class ReporteComponent implements OnInit {
     horaRep: ['', Validators.required],
     asuntoRep: ['', Validators.required],
     descripcionRep: ['', Validators.required],
-    depto: ['', Validators.required],
+    tipoDepto: ['', Validators.required],
     ubicacionRep : ['', Validators.required],
 /*     idFoto : ['', Validators.required], */
     tipoRep : ['', Validators.required],
-    idMatrizRep : ['', Validators.required]
+    matrizRep : ['', Validators.required]
     });
 
 
@@ -63,7 +88,7 @@ export class ReporteComponent implements OnInit {
 
     } */
 
-
+  
   onSubmit (){
     console.warn(this.profileForm.value);
     this.http.post('http://localhost:8080/api/reporte',

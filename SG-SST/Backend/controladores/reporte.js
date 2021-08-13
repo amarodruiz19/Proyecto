@@ -15,12 +15,17 @@ Reporte.get(function(err,reportes){
 		status:"success",
 		message:"reportes listados correctamente",
 		data: reportes
+
 	});
+
+
 });
 
 };
 
+
 exports.new = function (req, res) {
+
     var reporte = new Reporte();
     reporte.codRep= req.body.codRep;
     reporte.codEmp = req.body.codEmp;
@@ -28,11 +33,11 @@ exports.new = function (req, res) {
     reporte.horaRep = req.body.horaRep;
     reporte.asuntoRep= req.body.asuntoRep;
     reporte.descripcionRep= req.body.descripcionRep;
-    reporte.depto = req.body.depto;
+    reporte.tipoDepto = req.body.tipoDepto;
     reporte.ubicacionRep = req.body.ubicacionRep;
 /*     reporte.idFoto = req.body.idFoto; */
     reporte.tipoRep = req.body.tipoRep;
-    reporte.idMatrizRep = req.body.idMatrizRep;
+    reporte.matrizRep = req.body.matrizRep;
 
    // reporte.phone = req.body.phone;
 // save the reporte and check for errors
@@ -70,11 +75,11 @@ exports.update = function (req, res) {
     		reporte.horaRep = req.body.horaRep;
     		reporte.asuntoRep= req.body.asuntoRep;
     		reporte.descripcionRep= req.body.descripcionRep;
-    		reporte.depto = req.body.depto;
+    		reporte.tipoDepto = req.body.tipoDepto;
     		reporte.ubicacionRep = req.body.ubicacionRep;
 /*     		reporte.idFoto = req.body.idFoto; */
     		reporte.tipoRep = req.body.tipoRep;
-    		reporte.idMatrizRep = req.body.idMatrizRep;
+    		reporte.matrizRep = req.body.matrizRep;
 // save the reporte and check for errors
         reporte.save(function (err) {
         // Check for validation error

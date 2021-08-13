@@ -9,7 +9,7 @@
     </li>
   </ul>
 
-</mat-toolbar>
+</mat-toolbar> 
 
 <mat-card> Formulario Reporte
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
@@ -19,9 +19,14 @@
         type="text"
         id= "codRep"
         formControlName= "codRep"
+
+
+
         required
+
         placeholder="Código Reporte"
       />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
     <mat-form-field>
@@ -30,9 +35,14 @@
         type="text"
         id= "codEmp"
         formControlName= "codEmp"
+
+
+
         required
-        placeholder="Cédula Empleado"
+
+        placeholder="Código Empleado"
       />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
     <mat-form-field>
@@ -41,10 +51,14 @@
         type="date"
         id="fechaRep"
         formControlName= "fechaRep"
+
         required
+
         placeholder="Fecha Reporte"
       />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
+
 
     <mat-form-field>
       <input
@@ -52,10 +66,14 @@
         type="time"
         id="horaRep"
         formControlName= "horaRep"
+
         required
+
         placeholder="Hora Reporte"
       />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
+
 
     <mat-form-field>
       <input
@@ -63,33 +81,43 @@
         type="text"
         id="asuntoRep"
         formControlName= "asuntoRep"
+
         required
+
         placeholder="Asunto Reporte"
       />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
     <mat-form-field >
       <textarea
         matInput
         type="text"
-        rows="7"
+        rows="10" 
         cols="40"
         id="descripcionRep"
         formControlName= "descripcionRep"
+
         required
+
         placeholder="Descripcion Reporte"
-      >
+      > 
       </textarea>
+
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Departamento</mat-label>
-        <mat-select formControlName = "depto">
-          <mat-option *ngFor="let depto of deptos" [value]="depto.value">
-            {{depto.viewValue}}
+      <mat-label>Tipo de Departamento</mat-label>
+        <mat-select formControlName = "tipoDepto">
+          <mat-option *ngFor="let tipoDepto of tipoDeptos" [value]="tipoDepto.value">
+            {{tipoDepto.viewValue}}
           </mat-option>
         </mat-select>
     </mat-form-field>
+    
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    <!--</mat-form-field> -->
 
     <mat-form-field>
       <input
@@ -97,9 +125,12 @@
         type="text"
         id="ubicacionRep"
         formControlName= "ubicacionRep"
+
         required
+
         placeholder="Ubicación Reporte"
       />
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
     </mat-form-field>
 
     <!-- <mat-form-field>
@@ -108,11 +139,14 @@
         type="text"
         id="idFoto"
         formControlName= "idFoto"
+
         required
+
         placeholder="ID Foto"
       />
       <mat-error *ngIf="name.invalid">Campo invalido</mat-error>
      </mat-form-field> -->
+
 
 <mat-form-field appearance="fill">
   <mat-label>Tipo de Reporte</mat-label>
@@ -122,17 +156,28 @@
       </mat-option>
     </mat-select>
 </mat-form-field>
-
-    <mat-form-field>
+<!--     <mat-form-field>
       <input
         matInput
         type="text"
-        id="idMatrizRep"
-        formControlName= "idMatrizRep"
+        id="idTipoRep"
+        formControlName= "idTipoRep"
+
         required
-        placeholder="ID Matriz Reporte"
-      />
+
+      /> -->
+      <!-- <mat-error *ngIf="name.invalid">Campo invalido</mat-error> -->
+    <!-- </mat-form-field> -->
+
+    <mat-form-field>
+      <mat-label>Matriz Reporte</mat-label>
+        <mat-select formControlName = "matrizRep">
+          <mat-option *ngFor="let matrizRep of matrizReps" [value]="matrizRep.value">
+            {{matrizRep.viewValue}}
+          </mat-option>
+        </mat-select>
     </mat-form-field>
+
 
     <button mat-raised-button color="primary" type="submit" >Enviar</button>
   </form>
